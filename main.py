@@ -34,6 +34,8 @@ def get_travel_time(ORIGIN_LAT, ORIGIN_LONG, DEST_LAT, DEST_LONG):
    
 if __name__ == "__main__":
     result = (get_travel_time(ORIGIN_LAT, ORIGIN_LONG, DEST_LAT, DEST_LONG)) / 60
-    print(f"Travel time for {formatted_dt}: {result}")
+    formatted_result = round(result, 2)
+
+    print(f"\n>>> Travel time to Holmesglen Chadstone for {formatted_dt}: {formatted_result} minutes\n")
 
 
