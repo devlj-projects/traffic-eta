@@ -12,7 +12,7 @@ load_dotenv()
 API_KEY = os.getenv("ORS_API_KEY")
 
 required_dat = ["ORS_API_KEY", "ORIGIN_LONG","ORIGIN_LAT", "DEST_LAT", "DEST_LONG"]
-missing = [name for name in required_datgit if not os.getenv(name)]
+missing = [name for name in required_dat if not os.getenv(name)]
 if missing:
     raise SystemExit("Some required data is missing. Do you have an .env file in the project directory?")
 
