@@ -11,8 +11,8 @@ formatted_dt = current_dt.strftime("%A, %B %d, %Y at %I:%M %p")
 load_dotenv()
 API_KEY = os.getenv("ORS_API_KEY")
 
-required_dat = ["ORS_API_KEY", "ORIGIN_LONG", "DEST_LAT", "DEST_LONG"]
-missing = [name for name in required_dat if not os.getenv(name)]
+required_dat = ["ORS_API_KEY", "ORIGIN_LONG","ORIGIN_LAT", "DEST_LAT", "DEST_LONG"]
+missing = [name for name in required_datgit if not os.getenv(name)]
 if missing:
     raise SystemExit("Some required data is missing. Do you have an .env file in the project directory?")
 
@@ -44,6 +44,6 @@ if __name__ == "__main__":
     result = (get_travel_time(ORIGIN_LAT, ORIGIN_LONG, DEST_LAT, DEST_LONG)) / 60
     formatted_result = round(result, 2)
 
-    print(f"\n>>> Travel time from {point_A} to {point_B} {formatted_dt}: {formatted_result} minutes\n")
+    print(f"\n>>> Travel time from {point_A} to {point_B} on {formatted_dt}: {formatted_result} minutes\n")
 
 
